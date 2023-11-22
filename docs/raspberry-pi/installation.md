@@ -15,7 +15,7 @@ git config --global user.email EMAIL_ADDRESS
 Clone the project
 
 ```bash
-git clone https://github.com/bergb1/vrijtap.git
-cd vrijtap
+git clone https://github.com/vrijtap/raspberry-pi.git
+cd raspberry-pi
 ls
 ```
