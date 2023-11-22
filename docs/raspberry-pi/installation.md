@@ -59,3 +59,29 @@ sudo pip3 install mfrc522
 
 Now the Pi should be able to use the RFID library functions.
 
+## I2C Module Installation
+
+To enable the I2C functions you should again head to the configuration screen:
+
+```bash
+sudo raspi-config
+```
+
+Head to the interface options and enable I2C there. After this you should reboot the Pi.
+
+After booting the pi up again you should install the smbus2 packages to make the I2C library function.
+
+```bash
+pip install smbus2
+```
+
+## MongoDB Package Installation
+
+To use the functions in the mongo library included in the project you should install some packages for it to work.
+
+```bash
+python3 -m pip install pymongo
+pip install bson
+```
+
+After installing these packages you should be able to use the functions in the Mongo Library.
