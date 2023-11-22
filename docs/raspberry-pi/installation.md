@@ -38,3 +38,24 @@ dtoverlay=imx219
 camera_auto_detect=0
 ```
 
+## RFID Module Installation
+
+To enable the RFID-RC522 module you will need to connect it to the RaspberryPi as shown in the images in the Circuit page.
+
+Now you can boot up the RaspberryPi and go to the configuration screen.
+
+```bash
+sudo raspi-config
+```
+
+Here you should enable the SPI setting in Interface options and reboot the Pi.
+
+Now the Pi has enabled the SPI inteface and now you can install spidev and the module needed for the RFID module:
+
+```bash
+sudo pip3 install --upgrade spidev
+sudo pip3 install mfrc522
+```
+
+Now the Pi should be able to use the RFID library functions.
+
