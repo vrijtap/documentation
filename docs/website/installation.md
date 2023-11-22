@@ -1,107 +1,132 @@
-# Backend [Golang]
+# Installation
 
-In order for our project to function, we need a UI. For this we decided to use a website that's being hosted using a Golang backend.
+This page contains the entire installation of the website and what is needed to run the website in its current state. If the installation guide does not perform as expected, you could try to use a newer version. This installation is specifically targeted towards the Raspberry Pi 3.
 
-## reason
-
-The main reason why we are implementing a Golang backend is because it is a relatively new, but popular choice for backend development. In the previous semester I (Brian) had a course in backend development, but this was in Typescript, so in order to broaden my skill-set, I wanted to apply the knowledge I've gained in a new environment. Besides that, I wanted to actually secure the backend using TLS, because we didn't touch that subject in the course.
-
-## Installing Go
-
-The first step in executing the backend would be to install the programming language on a pi.
+## Installing Prerequisites
 
 ```bash
 sudo apt update
 sudo apt upgrade
+sudo apt install git
 ```
 
-Fetch, install and delete the Installation Files. Before you do this step, check if you are actually running an arm64 chipset and you might want to migratge the backend to a newer version when the next stable long term support version of Go releases.
+## Installing Go
+
+Fetch, install and delete the Installation Files.
 
 ```bash
-wget https://go.dev/dl/go1.21.1.linux-arm64.tar.gz
-sudo tar -C /usr/local -xzf go1.21.1.linux-arm64.tar.gz
-rm go1.21.1.linux-arm64.tar.gz
+wget https://go.dev/dl/go1.21.4.linux-arm64.tar.gz
+sudo tar -C /usr/local -xzf go1.21.4.linux-arm64.tar.gz
+rm go1.21.4.linux-arm64.tar.gz
 ```
 
-Edit the raspberry pi profile config
+Enter the profile config to configure the GO path.
 
 ```bash
 nano ~/.profile
-```
 
-Add to the bottom of the file and save:
-
-```bash
+# Add to the bottom of the file and save (with CTRL+X and then select Y):
 PATH=$PATH:/usr/local/go/bin
 GOPATH=$HOME/go
 ```
 
-Refresh the rasp pi config and check the go version
+Refresh the .profile file and check if go was installed succesfully.
 
 ```bash
 source ~/.profile
 go version
 ```
 
-## Creating Test CA Certificates
-
-In order for us to run and debug HTTPS, we need to supply our backend with the correct certificates. OpenSSL allows us to sign our own CA Certificates, but these do not work in production as they are not supported by any actual certificate authority. In production, this ofcourse would need to be changed.
+## Fetching the dev-payment-gate
 
 ```bash
-sudo apt update
-sudo apt upgrade
-sudo apt install openssl
+cd ~/
+git clone https://github.com/vrijtap/dev-payment-gate.git
+cd ~/dev-payment-gate
 ```
 
-Create test certificates and protect them. The reason why we need to give everyone read acces to the test certificates is because this allows us to run the backend without the need for sudo. Allowing us to automate steps in development.
+## Fetching the website Repository
 
 ```bash
-sudo mkdir -p /etc/ssl/testcerts
-sudo openssl req -new -x509 -days 365 -nodes -out /etc/ssl/testcerts/ca.pem -keyout /etc/ssl/testcerts/ca.key
-sudo chmod 604 /etc/ssl/testcerts/ca*
+cd ~/
+git clone https://github.com/vrijtap/website.git
+cd ~/website
 ```
 
-## Backend Build / Run
+## Run dev-payment-gate (development)
 
-Within the backed folder, you first have to copy ".env.template" as ".env" in the same folder. After that you have to change the values within ".env" to represent your environment.
+When you are running a development instance of the website, you might want to use our fake payment server to simulate purchases. To do this, you can copy '.env.template' as '.env' and fill in all of the information requested.
 
 ```bash
-# Server Communication Ports
-PortHTTP=:8080  # Port 8080 is the standard development port for HTTP
-PortHTTPS=:4443 # Port 4443 is the standard development port for HTTPS
-
-# TLS Certificate Paths
-CertFilePath=   # /etc/ssl/testcerts/ca.pem (When following the OpenSSL example)
-KeyFilePath=    # /etc/ssl/testcerts/ca.key (When following the OpenSSL example)
+cd ~/dev-payment-gate
+cp .env.template .env
+nano .env
 ```
 
-The commands underneath are simply to build and execute the backend. It is important to first go to the project folder "vrijtap".
+Here is how you can set it up:
 
 ```bash
-cd src/backend
-go build -o bin/backend cmd/main.go
-./bin/backend
+# Server Communication
+MONGO_URI= # [The key to your personal mongodb environment]
+
+# HTTP Information
+PORT="9090"
+
+# API key for using this server
+API_KEY="dev-payment-gate-key"
 ```
 
-Note that you need to execute the backend with sudo when you're using root protected ca certificates and/or root protected ports (such as port 80 and 443).
-
-## Installing Air
-
-Air is the automated compile and execute platform for golang. By using air we can achieve the same as we can with nodemon (except we don't need to install a javascript environment to run it). When using air, changes in files get detected automatically and this signals air to refresh the server build.
+The command underneath starts the payment gate locally.
 
 ```bash
-go install github.com/cosmtrek/air@latest
+cd ~/dev-payment-gate
+go run cmd/main.go
 ```
 
-Now you can try if the environment work by going to the project folder and using the command.
+## Run website
+
+After installing all of the prerequisites and go and fetching the github repository, you can copy '.env.template' as '.env' and fill in all of the information requested.
 
 ```bash
-cd ~/vrijtap/src/backend
-air
+cd ~/website
+cp .env.template .env
+nano .env
 ```
 
-In the case that it does not work, try again after running the following command.
+Here is how you can set it up for development:
 
 ```bash
-sudo mv ~/go/bin/air /usr/local/bin
+# Environment
+ENVIRONMENT="development"
+
+# HTTP Information (development)
+PORT_HTTP="8080"
+
+# HTTPS Information (production)
+PORT_HTTPS="4443"
+PATH_CERT_FILE=
+PATH_KEY_FILE=
+
+# Server Communication
+MONGO_URI= # [The key to your personal mongodb environment]
+
+# Server Secrets
+SERVER_SECRET="secret"
+PASSWORD_DEFAULT="default"
+
+# Payment Gate Information
+PAYMENT_GATE_URL="http://raspberry:9090/transaction"
+PAYMENT_GATE_KEY="dev-payment-gate-key"
+WEBHOOK_KEY="website-webhook-key"
+
+# Information
+NAME="Test Bar"
+PRICE="2.95"
+```
+
+The command underneath starts the website locally.
+
+```bash
+cd ~/website
+go run cmd/main.go
 ```
