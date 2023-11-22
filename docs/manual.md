@@ -284,7 +284,7 @@ Meeting these prerequisites will ensure a smooth experience when using or develo
 
 ## 12. Version History
 
-- Maintain a record of document version history and changes.
+- Version 1.0.0 - the first manual
 
 ---
 
