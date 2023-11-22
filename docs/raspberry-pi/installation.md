@@ -6,15 +6,12 @@ Due to the Raspberry Pi being an operating system running the server, AI and a c
 
 Ofcourse we need to install Git, as our project is based on Github.
 
-```bash
-sudo apt install git
-git config --global user.name USERNAME
-git config --global user.email EMAIL_ADDRESS
-```
-
 Clone the project
 
 ```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install git
 git clone https://github.com/vrijtap/raspberry-pi.git
 cd raspberry-pi
 ls
