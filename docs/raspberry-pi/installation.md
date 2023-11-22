@@ -19,3 +19,9 @@ git clone https://github.com/bergb1/vrijtap.git
 cd vrijtap
 ls
 ```
+
+
+## Camera Installation
+
+To enable the camera on the RaspberryPi you will need the 
+
