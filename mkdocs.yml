@@ -3,14 +3,18 @@ site_name: 'vrijtap'
 nav:
 - 'Home': 'index.md'
 - 'Manual': 'manual.md'
+- 'Arduino':
+  - 'Circuit': 'arduino/circuit.md'
+  - 'Classes': 'arduino/classes.md'
 - 'Raspberry Pi':
   - 'Installation': 'raspberry-pi/installation.md'
   - 'Circuit': 'raspberry-pi/circuit.md'
-- 'Technical Documentation':
-  - 'Backend [Golang]': 'technical-documentation/backend.md'
+- 'Webiste':
+  - 'Installation': 'website/installation.md'
 
 theme:
   name: readthedocs
   highlightjs: true
   hljs_languages:
     - bash
+    - c++
