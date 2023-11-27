@@ -17,18 +17,17 @@ cd raspberry-pi
 ls
 ```
 
-
 ## Camera Installation
 
 To enable the camera on the RaspberryPi you will need to turn the legacy camera on in the config screen, you can do this by running the command:
+
 ```bash
 sudo raspi-config
 ```
 
 Here you should select the Interface options and turn on the legacy camera support. After this you can close this screen and reboot the pi.
 
-
-Next up you should edit the config.txt and you should add two lines to make the camera detectable. 
+Next up you should edit the config.txt and you should add two lines to make the camera detectable.
 
 ```bash
 sudo nano /boot/config.txt
