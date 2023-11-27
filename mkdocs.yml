@@ -4,6 +4,7 @@ nav:
 - 'Home': 'index.md'
 - 'Manual': 'manual.md'
 - 'Arduino':
+  - 'Installation': 'arduino/installation.md'
   - 'Circuit': 'arduino/circuit.md'
   - 'Classes': 'arduino/classes.md'
 - 'Raspberry Pi':
