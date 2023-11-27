@@ -125,3 +125,4 @@ void loop() {
     int currentState = stateMachine.getState(); // Get the current state
     // Perform actions based on currentState
 }
+```
