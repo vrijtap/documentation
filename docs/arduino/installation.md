@@ -11,7 +11,7 @@ mkdir ~/Git && cd ~/Git
 git clone -b main https://github.com/vrijtap/arduino-uno.git
 ```
 
-The Git repository should now be located in C:\Users\\\<User>\Git
+The Git repository should now be located in C:\Users\User\Git
 
 ## General Arduino
 
