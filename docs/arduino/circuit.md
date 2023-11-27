@@ -13,3 +13,9 @@ In order to make the High Torque Servo work, you should at all times use an exte
 2. **Signal Wire:** Connect the signal wire from the High Torque Servo to a digital GPIO pin on the Arduino. Note that the Arduino and Servo will need to share a ground to the External Power Supply for the Arduino to be able to send signals.
 
 3. **Power Supply to Arduino:** Connect the external power supply to the Arduino.
+
+## Pump
+
+In order to make the pump work, we are going to use a relais to switch the 12v power on/off. The circuit required for this ordeal is as follows:
+
+![Pump Circuit Diagram](img/PumpCircuit.png)
