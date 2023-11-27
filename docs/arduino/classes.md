@@ -76,9 +76,11 @@ After performing all of the functions in the documentation you will succesfully 
 ## StateMachine
 
 ### Overview
+
 The `StateMachine` class implements a state machine that manages transitions between `SM_IDLE_STATE`, `SM_TAPPING_STATE`, and `SM_PAUSED_STATE` based on specific events: `SM_ZERO` and `SM_ONE`.
 
 #### Constants
+
 - `SM_IDLE_STATE`: Represents the idle state (value: 0).
 - `SM_TAPPING_STATE`: Represents the tapping state (value: 1).
 - `SM_PAUSED_STATE`: Represents the paused state (value: 2).
@@ -86,20 +88,29 @@ The `StateMachine` class implements a state machine that manages transitions bet
 - `SM_ONE`: Represents event one.
 
 ### Class Members
+
 #### Constructor
+
 ##### `StateMachine()`
+
 Creates an instance of the `StateMachine` class with an initial state of `SM_IDLE_STATE`.
 
 #### Methods
+
 ##### `void handleInputEvent(int SM_event)`
+
 Handles input events and manages state transitions.
+
 - `SM_event`: The event triggering the state transition (`SM_ZERO` or `SM_ONE`).
 
 ##### `int getState() const`
+
 Gets the current state of the StateMachine.
+
 - Returns: `int` - The current state of the StateMachine.
 
 ### Usage Example
+
 ```cpp
 #include "StateMachine.h"
 
