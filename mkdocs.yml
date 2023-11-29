@@ -10,6 +10,7 @@ nav:
 - 'Raspberry Pi':
   - 'Installation': 'raspberry-pi/installation.md'
   - 'Circuit': 'raspberry-pi/circuit.md'
+  - 'Libraries': 'raspberry-pi/classes.md'
 - 'Artificial Intelligence':
   - 'Model': 'artificial-intelligence/model.md'
 - 'Webiste':
