@@ -206,3 +206,73 @@ This function has to be called at the end of the whole program to reset the GPIO
 ```
 ---
 
+
+## MongoLib
+
+The mongo library enables the device to use the mongodb functions in a simple fashion. It uses the modules pymongo, bson, pymongo.errors and bson.errors.
+
+---
+
+### `mdb = mongo.Mongo(uri, database_name, collection_name)`
+
+**Description:**
+Creates an instance of the mongo library class. Will connect to a mongo database using the variables given. 
+The function will also give an exception if setting up the connection takes longer than 30 seconds.
+
+**Parameters:**
+
+- `uri`: This should be a URI value to connect to a database.
+- `database_name`: This should be the name of the database.
+- `collection_name`: This should be the name of the collection.
+
+**Example:**
+
+```py
+    from mongoLib  import mongo
+    mdb = mongo.Mongo(uri, 'backend', 'cards')
+```
+---
+
+### `mdb.userExists(uid: str)`
+
+**Description:**
+The userExists function will look in the database if there is a user with the ID supplied to the function. It will return a True or False based upon the results found. If the user exists this function will also aquire the data about how many drinks there are left for this user.
+
+---
+If there is an invalid user ID supplied to the function it will return a False and notify that the type of data is the wrong format.
+
+**Parameters:**
+
+- `uid`: The ID of the user you are trying to find. This must be a string.
+
+**Example:**
+
+```py
+    if mdb.userExists(uid) == True: 
+        # Do something
+```
+### `mdb.decreaseBeer()`
+
+**Description:**
+This function will check if the user still has their "beers" value in the positives. If not, there wont be a reduction in this value on the database. If there is a positive balance, there will be an increase of -1 to the database value "beers".
+---
+This  function will return False if a wrong uid is given to the mdb.userExists(uid) function.
+
+**Example:**
+
+```py
+    mdb.decreaseBeer()
+```
+
+### `mdb.closeConnection()`
+
+**Description:**
+This function will close the database connection.
+
+**Example:**
+
+```py
+    # End of program, shutting down.
+    mdb.closeConnection() 
+```
+---
