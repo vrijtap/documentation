@@ -152,10 +152,10 @@ The Rfid library enables the device to use the rfid-rc522 device. It uses the mo
 
 ---
 
-### `bus.Bus(port, adress)`
+### `readerRFID.Rfid()`
 
 **Description:**
-Creates an instance of the i2c class with specified adress and port.
+Creates an instance of the rfid class.
 
 **Example:**
 
@@ -205,3 +205,4 @@ This function has to be called at the end of the whole program to reset the GPIO
     rfid.closeGPIO() 
 ```
 ---
+
