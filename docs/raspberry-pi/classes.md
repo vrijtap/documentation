@@ -144,3 +144,64 @@ This function also returns a True or False depending on if the message was deliv
         #do something here
 ```
 ---
+
+
+## RFIDLib
+
+The Rfid library enables the device to use the rfid-rc522 device. It uses the modules RPi.GPIO and mfrc522.
+
+---
+
+### `bus.Bus(port, adress)`
+
+**Description:**
+Creates an instance of the i2c class with specified adress and port.
+
+**Example:**
+
+```py
+    from rfidLib import readerRFID
+    rfid = readerRFID.Rfid()
+
+```
+---
+
+### `rfid.write(data)`
+
+**Description:**
+The rfid_write function will write the given data to an rfid writable object, eg. myfairclassic cards. This function is only to write without much checks being in place. It will give an exception if the write process has failed.
+
+**Parameters:**
+
+- `data`: This can be anything, preferably a string.
+
+**Example:**
+
+```py
+    rfid.write(string_of_words)
+```
+### `rfid.read()`
+
+**Description:**
+The read function will enable the rfid module to read data from any carrying rfid object in range of the reader. It will read what has been written to the medium and it will perform a check to see if it is the correct size of 48. This size is chosen based upon the lenght of the MongoDB ID size.
+---
+This  function will return the read data.
+
+**Example:**
+
+```py
+    data_on_card = rfid.read()
+```
+
+### `rfid.closeGPIO()`
+
+**Description:**
+This function has to be called at the end of the whole program to reset the GPIO usage on the RaspberryPi.
+
+**Example:**
+
+```py
+    # End of program, shutting down.
+    rfid.closeGPIO() 
+```
+---
