@@ -126,3 +126,7 @@ void loop() {
     // Perform actions based on currentState
 }
 ```
+
+## Loadcell
+
+
