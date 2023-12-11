@@ -19,3 +19,10 @@ In order to make the High Torque Servo work, you should at all times use an exte
 In order to make the pump work, we are going to use a relais to switch the 12v power on/off. The circuit required for this ordeal is as follows:
 
 ![Pump Circuit Diagram](img/PumpCircuit.png)
+
+
+## Scale
+
+The connections that are needed to read the loadcell are shown as following: 
+
+![Scale Circuit Diagram](img/LoadcellCircuit.png)

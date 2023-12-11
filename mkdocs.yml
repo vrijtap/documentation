@@ -3,6 +3,7 @@ site_name: 'vrijtap'
 nav:
 - 'Home': 'index.md'
 - 'Manual': 'manual.md'
+- 'Prototype': 'prototype.md' 
 - 'Arduino':
   - 'Installation': 'arduino/installation.md'
   - 'Circuit': 'arduino/circuit.md'
