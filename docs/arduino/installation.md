@@ -20,3 +20,8 @@ To install the Arduino, you'll have to download the installation online. After i
 ## Uploading Project
 
 Under 'files', select 'open'. Find the 'arduino-uno/' folder on your machine that you've cloned with Git and open 'arduino-uno.ino'. Finally click on the publish button in the Arduino IDE after selecting the COM port associated with 'Arduino Uno'.
+
+## Packages
+
+### Scale
+- HX711 Arduino library

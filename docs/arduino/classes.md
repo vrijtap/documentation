@@ -129,4 +129,77 @@ void loop() {
 
 ## Loadcell
 
+### Overview
+
+The arduino will make use of a loadcell to determine the percentage of liquids left in the tank. 
+
+
+### `HighTorqueServo(int minAngle, int maxAngle)`
+
+**Description:**
+Creates an instance of the High Torque Servo class with specified angle limits.
+
+**Parameters:**
+
+- `doutPin`: pin used for digital output (desired: Digital pin 2).
+- `sckPin`: pin used for sck (desired: Digital pin 3).
+
+**Example:**
+
+```cpp
+#include "Scale.h"  
+
+// Constructor: Initializes the Scale object with specified pins and calibration factor
+Scale::Scale(int doutPin, int sckPin)
+  : doutPin(doutPin), sckPin(sckPin) {
+}
+```
+---
+#### Methods
+
+##### `void Scale::init()`
+
+Sets up the scale and runs the reset function once to calibrate the scale to 0. The scale factor is also applied here.
+
+##### `void Scale::reset()`
+
+Uses the built in tare function to recalibrate the scale to 0.
+
+
+##### `float Scale::getWeight()`
+
+Returns the current weight of the tank in grams.
+
+- Returns: `float` - The current weight of the tank.
+
+
+##### `int Scale::getPercentage()`
+
+Returns the current percentage of liquids in the tank.
+
+- Returns: `int` - The current percentage.
+
+### Usage Example
+
+```cpp
+#include "Scale.h"
+#include <Wire.h>
+
+const int LOADCELL_DOUT_PIN = 2;  
+const int LOADCELL_SCK_PIN = 3;   
+
+// Create a scale instance
+Scale scale(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
+
+
+void setup() {
+  scale.init(); // initializes the scale
+}
+
+void loop() {
+    int currentState = stateMachine.getState(); // Get the current state
+    int percentage = scale.getPercentage(); // Get the percentage of the tank.
+}
+```
+
 
