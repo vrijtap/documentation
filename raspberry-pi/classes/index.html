@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Libraries - vrijtap</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Libraries";
+        var mkdocs_page_input_path = "raspberry-pi/classes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c++.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> vrijtap
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../manual/">Manual</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../prototype/">Prototype</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Arduino</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/classes/">Classes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Raspberry Pi</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Libraries</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cameralib">cameraLib</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cameracamerapicture_size">camera.Camera(picture_size)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#camburstpath-name-amount-seconds">cam.burst(path, name, amount, seconds)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#camcapturepath-name">cam.capture(path, name)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#camcapturearray">cam.captureArray()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#i2clib">i2cLib</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#busbusport-adress">bus.Bus(port, adress)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bussend_datadata">bus.send_data(data)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#busreceive_data">bus.receive_data()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bussend_and_checkdata">bus.send_and_check(data)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rfidlib">RFIDLib</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#readerrfidrfid">readerRFID.Rfid()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rfidwritedata">rfid.write(data)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rfidread">rfid.read()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rfidclosegpio">rfid.closeGPIO()</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mongolib">MongoLib</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mdb-mongomongouri-database_name-collection_name">mdb = mongo.Mongo(uri, database_name, collection_name)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mdbuserexistsuid-str">mdb.userExists(uid: str)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mdbdecreasebeer">mdb.decreaseBeer()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mdbcloseconnection">mdb.closeConnection()</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Artificial Intelligence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../artificial-intelligence/model/">Model</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Webiste</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../website/installation/">Installation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">vrijtap</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Raspberry Pi</li>
+      <li class="breadcrumb-item active">Libraries</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="raspberrypi-classes">RaspberryPi Classes</h1>
+<p>In this file, all of the classes made for the RaspberryPi 4B+ are generally discribed in their use and initialisation.</p>
+<p><strong>Disclaimer:</strong> Once the libraries have been initialized you can use the functions included within them.</p>
+<h2 id="cameralib">cameraLib</h2>
+<p>The camera library enables the camera by using the picam2 module.</p>
+<hr />
+<h3 id="cameracamerapicture_size"><code>camera.Camera(picture_size)</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the camera class with specified size.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>picture_size</code>: The height and width size of the picture (accepted value: [64]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    from cameraLib  import camera
+    cam = camera.Camera(64)
+</code></pre>
+<hr />
+<h3 id="camburstpath-name-amount-seconds"><code>cam.burst(path, name, amount, seconds)</code></h3>
+<p><strong>Description:</strong>
+The burst function creates a set of images seperated by a given time. The images will be saved as .jpg.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>path</code>: The location where the images should be saved at.</li>
+<li><code>name</code>: The name of the images. Is set per image and will be wrapped by datatime data.</li>
+<li><code>amount</code>: The amount of pictures to be taken.</li>
+<li><code>seconds</code>: The timing in between pictures being taken.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    cam.burst(&quot;~/path_to_image_folder&quot;, &quot;image_name&quot;, 30, 1)
+</code></pre>
+<hr />
+<h3 id="camcapturepath-name"><code>cam.capture(path, name)</code></h3>
+<p><strong>Description:</strong>
+The capture function creates a single image and saves it, as a .jpg, to a given location.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>path</code>: The location where the images should be saved at.</li>
+<li><code>name</code>: The name of the images. Is set per image. Is set per image and will be wrapped by datatime data.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    cam.capture(&quot;~/path_to_image_folder&quot;, &quot;image_name&quot;)
+</code></pre>
+<hr />
+<h3 id="camcapturearray"><code>cam.captureArray()</code></h3>
+<p><strong>Description:</strong>
+The captureArray function creates an array wherein the imagedata is saved. It will return this array.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    image_array = cam.captureArray()
+</code></pre>
+<hr />
+<h2 id="i2clib">i2cLib</h2>
+<p>The I2C library enables the device to use the I2C communication channel in a simple fashion. It uses the smbus2 module.</p>
+<hr />
+<h3 id="busbusport-adress"><code>bus.Bus(port, adress)</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the i2c class with specified adress and port.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>port</code>: The port the I2C connection is set up from (Default: [1]).</li>
+<li><code>adress</code>: The height and width size of the picture (Default: [0x8]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    from i2cLib import bus
+    i2c = bus.Bus(1, 0x8)
+
+</code></pre>
+<hr />
+<h3 id="bussend_datadata"><code>bus.send_data(data)</code></h3>
+<p><strong>Description:</strong>
+The send_data function will send out the handed data. Given that it is an integer and within one byte.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>data</code>: This can be any int value as long as it is in one byte. Otherwise it will restart again from 0. (Recommended range: [0, 255]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    i2c.send_data(32)
+</code></pre>
+<h3 id="busreceive_data"><code>bus.receive_data()</code></h3>
+<p><strong>Description:</strong>
+The receive_data function will poll the slave for any changes on the I2C bus. it will receive what the value on the slave currently is.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    polled_message = i2c.receive_data()
+</code></pre>
+<h3 id="bussend_and_checkdata"><code>bus.send_and_check(data)</code></h3>
+<p><strong>Description:</strong>
+The send_and_check function will send out a message to the slave and requires the slave to echo the same message back, this is done to know for sure the message has been delivered to the slave. </p>
+<p>This function also returns a True or False depending on if the message was delivered succesfully.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>data</code>: This can be any int value as long as it is in one byte. Otherwise it will restart again from 0. (Recommended range: [0, 255]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    if i2c.send_and_check(1):
+        #do something here
+</code></pre>
+<hr />
+<h2 id="rfidlib">RFIDLib</h2>
+<p>The Rfid library enables the device to use the rfid-rc522 device. It uses the modules RPi.GPIO and mfrc522.</p>
+<hr />
+<h3 id="readerrfidrfid"><code>readerRFID.Rfid()</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the rfid class.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    from rfidLib import readerRFID
+    rfid = readerRFID.Rfid()
+
+</code></pre>
+<hr />
+<h3 id="rfidwritedata"><code>rfid.write(data)</code></h3>
+<p><strong>Description:</strong>
+The rfid_write function will write the given data to an rfid writable object, eg. myfairclassic cards. This function is only to write without much checks being in place. It will give an exception if the write process has failed.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>data</code>: This can be anything, preferably a string.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    rfid.write(string_of_words)
+</code></pre>
+<h3 id="rfidread"><code>rfid.read()</code></h3>
+<p><strong>Description:</strong>
+The read function will enable the rfid module to read data from any carrying rfid object in range of the reader. It will read what has been written to the medium and it will perform a check to see if it is the correct size of 48. This size is chosen based upon the lenght of the MongoDB ID size.</p>
+<hr />
+<p>This  function will return the read data.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    data_on_card = rfid.read()
+</code></pre>
+<h3 id="rfidclosegpio"><code>rfid.closeGPIO()</code></h3>
+<p><strong>Description:</strong>
+This function has to be called at the end of the whole program to reset the GPIO usage on the RaspberryPi.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    # End of program, shutting down.
+    rfid.closeGPIO() 
+</code></pre>
+<hr />
+<h2 id="mongolib">MongoLib</h2>
+<p>The mongo library enables the device to use the mongodb functions in a simple fashion. It uses the modules pymongo, bson, pymongo.errors and bson.errors.</p>
+<hr />
+<h3 id="mdb-mongomongouri-database_name-collection_name"><code>mdb = mongo.Mongo(uri, database_name, collection_name)</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the mongo library class. Will connect to a mongo database using the variables given. 
+The function will also give an exception if setting up the connection takes longer than 30 seconds.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>uri</code>: This should be a URI value to connect to a database.</li>
+<li><code>database_name</code>: This should be the name of the database.</li>
+<li><code>collection_name</code>: This should be the name of the collection.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    from mongoLib  import mongo
+    mdb = mongo.Mongo(uri, 'backend', 'cards')
+</code></pre>
+<hr />
+<h3 id="mdbuserexistsuid-str"><code>mdb.userExists(uid: str)</code></h3>
+<p><strong>Description:</strong>
+The userExists function will look in the database if there is a user with the ID supplied to the function. It will return a True or False based upon the results found. If the user exists this function will also aquire the data about how many drinks there are left for this user.</p>
+<hr />
+<p>If there is an invalid user ID supplied to the function it will return a False and notify that the type of data is the wrong format.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>uid</code>: The ID of the user you are trying to find. This must be a string.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    if mdb.userExists(uid) == True: 
+        # Do something
+</code></pre>
+<h3 id="mdbdecreasebeer"><code>mdb.decreaseBeer()</code></h3>
+<p><strong>Description:</strong>
+This function will check if the user still has their "beers" value in the positives. If not, there wont be a reduction in this value on the database. If there is a positive balance, there will be an increase of -1 to the database value "beers".</p>
+<hr />
+<p>This  function will return False if a wrong uid is given to the mdb.userExists(uid) function.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    mdb.decreaseBeer()
+</code></pre>
+<h3 id="mdbcloseconnection"><code>mdb.closeConnection()</code></h3>
+<p><strong>Description:</strong>
+This function will close the database connection.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-py">    # End of program, shutting down.
+    mdb.closeConnection() 
+</code></pre>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../circuit/" class="btn btn-neutral float-left" title="Circuit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../artificial-intelligence/model/" class="btn btn-neutral float-right" title="Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../circuit/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../artificial-intelligence/model/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Installation - vrijtap</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "website/installation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c++.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> vrijtap
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../manual/">Manual</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../prototype/">Prototype</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Arduino</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../arduino/classes/">Classes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Raspberry Pi</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/classes/">Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Artificial Intelligence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../artificial-intelligence/model/">Model</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Webiste</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installing-prerequisites">Installing Prerequisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-go">Installing Go</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fetching-the-dev-payment-gate">Fetching the dev-payment-gate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fetching-the-website-repository">Fetching the website Repository</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-dev-payment-gate-development">Run dev-payment-gate (development)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-website">Run website</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">vrijtap</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Webiste</li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation">Installation</h1>
+<p>This page contains the entire installation of the website and what is needed to run the website in its current state. If the installation guide does not perform as expected, you could try to use a newer version. This installation is specifically targeted towards the Raspberry Pi 3.</p>
+<h2 id="installing-prerequisites">Installing Prerequisites</h2>
+<pre><code class="language-bash">sudo apt update
+sudo apt upgrade
+sudo apt install git
+</code></pre>
+<h2 id="installing-go">Installing Go</h2>
+<p>Fetch, install and delete the Installation Files.</p>
+<pre><code class="language-bash">wget https://go.dev/dl/go1.21.4.linux-arm64.tar.gz
+sudo tar -C /usr/local -xzf go1.21.4.linux-arm64.tar.gz
+rm go1.21.4.linux-arm64.tar.gz
+</code></pre>
+<p>Enter the profile config to configure the GO path.</p>
+<pre><code class="language-bash">nano ~/.profile
+
+# Add to the bottom of the file and save (with CTRL+X and then select Y):
+PATH=$PATH:/usr/local/go/bin
+GOPATH=$HOME/go
+</code></pre>
+<p>Refresh the .profile file and check if go was installed succesfully.</p>
+<pre><code class="language-bash">source ~/.profile
+go version
+</code></pre>
+<h2 id="fetching-the-dev-payment-gate">Fetching the dev-payment-gate</h2>
+<pre><code class="language-bash">cd ~/
+git clone https://github.com/vrijtap/dev-payment-gate.git
+cd ~/dev-payment-gate
+</code></pre>
+<h2 id="fetching-the-website-repository">Fetching the website Repository</h2>
+<pre><code class="language-bash">cd ~/
+git clone https://github.com/vrijtap/website.git
+cd ~/website
+</code></pre>
+<h2 id="run-dev-payment-gate-development">Run dev-payment-gate (development)</h2>
+<p>When you are running a development instance of the website, you might want to use our fake payment server to simulate purchases. To do this, you can copy '.env.template' as '.env' and fill in all of the information requested.</p>
+<pre><code class="language-bash">cd ~/dev-payment-gate
+cp .env.template .env
+nano .env
+</code></pre>
+<p>Here is how you can set it up:</p>
+<pre><code class="language-bash"># Server Communication
+MONGO_URI= # [The key to your personal mongodb environment]
+
+# HTTP Information
+PORT=&quot;9090&quot;
+
+# API key for using this server
+API_KEY=&quot;dev-payment-gate-key&quot;
+</code></pre>
+<p>The command underneath starts the payment gate locally.</p>
+<pre><code class="language-bash">cd ~/dev-payment-gate
+go run cmd/main.go
+</code></pre>
+<h2 id="run-website">Run website</h2>
+<p>After installing all of the prerequisites and go and fetching the github repository, you can copy '.env.template' as '.env' and fill in all of the information requested.</p>
+<pre><code class="language-bash">cd ~/website
+cp .env.template .env
+nano .env
+</code></pre>
+<p>Here is how you can set it up for development:</p>
+<pre><code class="language-bash"># Environment
+ENVIRONMENT=&quot;development&quot;
+
+# HTTP Information (development)
+PORT_HTTP=&quot;8080&quot;
+
+# HTTPS Information (production)
+PORT_HTTPS=&quot;4443&quot;
+PATH_CERT_FILE=
+PATH_KEY_FILE=
+
+# Server Communication
+MONGO_URI= # [The key to your personal mongodb environment]
+
+# Server Secrets
+SERVER_SECRET=&quot;secret&quot;
+PASSWORD_DEFAULT=&quot;default&quot;
+
+# Payment Gate Information
+PAYMENT_GATE_URL=&quot;http://raspberry:9090/transaction&quot;
+PAYMENT_GATE_KEY=&quot;dev-payment-gate-key&quot;
+WEBHOOK_KEY=&quot;website-webhook-key&quot;
+
+# Information
+NAME=&quot;Test Bar&quot;
+PRICE=&quot;2.95&quot;
+</code></pre>
+<p>The command underneath starts the website locally.</p>
+<pre><code class="language-bash">cd ~/website
+go run cmd/main.go
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../artificial-intelligence/model/" class="btn btn-neutral float-left" title="Model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../artificial-intelligence/model/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
