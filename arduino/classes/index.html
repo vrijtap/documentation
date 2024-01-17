@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Classes - vrijtap</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Classes";
+        var mkdocs_page_input_path = "arduino/classes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c++.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> vrijtap
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../manual/">Manual</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../prototype/">Prototype</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Arduino</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Classes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#high-torque-servo">High Torque Servo</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hightorqueservoint-minangle-int-maxangle">HighTorqueServo(int minAngle, int maxAngle)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#void-inituint8_t-servopin-float-percentage">void init(uint8_t servoPin, float percentage)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#void-writefloat-percentage">void write(float percentage)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#statemachine">StateMachine</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#class-members">Class Members</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#constructor">Constructor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage-example">Usage Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loadcell">Loadcell</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#overview_1">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hightorqueservoint-minangle-int-maxangle_1">HighTorqueServo(int minAngle, int maxAngle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#methods_1">Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage-example_1">Usage Example</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Raspberry Pi</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../raspberry-pi/classes/">Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Artificial Intelligence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../artificial-intelligence/model/">Model</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Webiste</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../website/installation/">Installation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">vrijtap</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Arduino</li>
+      <li class="breadcrumb-item active">Classes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arduino-classes">Arduino Classes</h1>
+<p>In this file, all of the classes made for the Arduino are discribed in terms of how to initialize them and use them.</p>
+<h2 id="high-torque-servo">High Torque Servo</h2>
+<p>The High Torque Servo is a servo meant for heavy loads. The Servo is powerful with the drawback of it consuming more power. The following functions can be used in our project to utilize it:</p>
+<hr />
+<h3 id="hightorqueservoint-minangle-int-maxangle"><code>HighTorqueServo(int minAngle, int maxAngle)</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the High Torque Servo class with specified angle limits.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>minAngle</code>: Minimum angle limit (accepted range: [0, 180]).</li>
+<li><code>maxAngle</code>: Maximum angle limit (accepted range: [0, 180]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-cpp">#include &quot;HighTorqueServo.h&quot;
+
+// Initialize a High Torque Servo with angle limits
+HighTorqueServo myHighTorqueServo(0, 180);
+</code></pre>
+<hr />
+<h3 id="void-inituint8_t-servopin-float-percentage"><code>void init(uint8_t servoPin, float percentage)</code></h3>
+<p><strong>Description:</strong>
+Initialize the High Torque Servo. This function needs to be called in the setup function within the Arduino .ino file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>servoPin</code>: Pin number for the servo.</li>
+<li><code>percentage</code>: Initial percentage turned (accepted range: [0.0, 100.0]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-cpp">void setup() {
+    myHighTorqueServo.init(6, 0.0);
+}
+</code></pre>
+<hr />
+<h3 id="void-writefloat-percentage"><code>void write(float percentage)</code></h3>
+<p><strong>Description:</strong>
+Turns the servo into a position based on the percentage of the minimum and maximum angle.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>percentage</code>: Percentage to turn to (accepted range: [0.0, 100.0]).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-cpp">#include &lt;Arduino.h&gt;
+
+void loop() {
+    delay(1000);
+    myHighTorqueServo.write(100.0);
+}
+</code></pre>
+<hr />
+<p>After performing all of the functions in the documentation you will succesfully initialize the servo with a resricted minimum and maximum angle and you will have moved it from 0 percent of that angle to 100 percent. This results in the Servo moving from 0 degrees to 180 degrees.</p>
+<h2 id="statemachine">StateMachine</h2>
+<h3 id="overview">Overview</h3>
+<p>The <code>StateMachine</code> class implements a state machine that manages transitions between <code>SM_IDLE_STATE</code>, <code>SM_TAPPING_STATE</code>, and <code>SM_PAUSED_STATE</code> based on specific events: <code>SM_ZERO</code> and <code>SM_ONE</code>.</p>
+<h4 id="constants">Constants</h4>
+<ul>
+<li><code>SM_IDLE_STATE</code>: Represents the idle state (value: 0).</li>
+<li><code>SM_TAPPING_STATE</code>: Represents the tapping state (value: 1).</li>
+<li><code>SM_PAUSED_STATE</code>: Represents the paused state (value: 2).</li>
+<li><code>SM_ZERO</code>: Represents event zero.</li>
+<li><code>SM_ONE</code>: Represents event one.</li>
+</ul>
+<h3 id="class-members">Class Members</h3>
+<h4 id="constructor">Constructor</h4>
+<h5 id="statemachine_1"><code>StateMachine()</code></h5>
+<p>Creates an instance of the <code>StateMachine</code> class with an initial state of <code>SM_IDLE_STATE</code>.</p>
+<h4 id="methods">Methods</h4>
+<h5 id="void-handleinputeventint-sm_event"><code>void handleInputEvent(int SM_event)</code></h5>
+<p>Handles input events and manages state transitions.</p>
+<ul>
+<li><code>SM_event</code>: The event triggering the state transition (<code>SM_ZERO</code> or <code>SM_ONE</code>).</li>
+</ul>
+<h5 id="int-getstate-const"><code>int getState() const</code></h5>
+<p>Gets the current state of the StateMachine.</p>
+<ul>
+<li>Returns: <code>int</code> - The current state of the StateMachine.</li>
+</ul>
+<h3 id="usage-example">Usage Example</h3>
+<pre><code class="language-cpp">#include &quot;StateMachine.h&quot;
+
+// Create a StateMachine instance
+StateMachine stateMachine;
+
+void setup() {
+    stateMachine.handleInputEvent(SM_ONE); // Perform state transitions based on events
+}
+
+void loop() {
+    int currentState = stateMachine.getState(); // Get the current state
+    // Perform actions based on currentState
+}
+</code></pre>
+<h2 id="loadcell">Loadcell</h2>
+<h3 id="overview_1">Overview</h3>
+<p>The arduino will make use of a loadcell to determine the percentage of liquids left in the tank. </p>
+<h3 id="hightorqueservoint-minangle-int-maxangle_1"><code>HighTorqueServo(int minAngle, int maxAngle)</code></h3>
+<p><strong>Description:</strong>
+Creates an instance of the High Torque Servo class with specified angle limits.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>doutPin</code>: pin used for digital output (desired: Digital pin 2).</li>
+<li><code>sckPin</code>: pin used for sck (desired: Digital pin 3).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-cpp">#include &quot;Scale.h&quot;  
+
+// Constructor: Initializes the Scale object with specified pins and calibration factor
+Scale::Scale(int doutPin, int sckPin)
+  : doutPin(doutPin), sckPin(sckPin) {
+}
+</code></pre>
+<hr />
+<h4 id="methods_1">Methods</h4>
+<h5 id="void-scaleinit"><code>void Scale::init()</code></h5>
+<p>Sets up the scale and runs the reset function once to calibrate the scale to 0. The scale factor is also applied here.</p>
+<h5 id="void-scalereset"><code>void Scale::reset()</code></h5>
+<p>Uses the built in tare function to recalibrate the scale to 0.</p>
+<h5 id="float-scalegetweight"><code>float Scale::getWeight()</code></h5>
+<p>Returns the current weight of the tank in grams.</p>
+<ul>
+<li>Returns: <code>float</code> - The current weight of the tank.</li>
+</ul>
+<h5 id="int-scalegetpercentage"><code>int Scale::getPercentage()</code></h5>
+<p>Returns the current percentage of liquids in the tank.</p>
+<ul>
+<li>Returns: <code>int</code> - The current percentage.</li>
+</ul>
+<h3 id="usage-example_1">Usage Example</h3>
+<pre><code class="language-cpp">#include &quot;Scale.h&quot;
+#include &lt;Wire.h&gt;
+
+const int LOADCELL_DOUT_PIN = 2;  
+const int LOADCELL_SCK_PIN = 3;   
+
+// Create a scale instance
+Scale scale(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
+
+
+void setup() {
+  scale.init(); // initializes the scale
+}
+
+void loop() {
+    int currentState = stateMachine.getState(); // Get the current state
+    int percentage = scale.getPercentage(); // Get the percentage of the tank.
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../circuit/" class="btn btn-neutral float-left" title="Circuit"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../raspberry-pi/installation/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../circuit/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../raspberry-pi/installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

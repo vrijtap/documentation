@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Manual - vrijtap</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Manual";
+        var mkdocs_page_input_path = "manual.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c++.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> vrijtap
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Manual</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-introduction">1. Introduction</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../prototype/">Prototype</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Arduino</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../arduino/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../arduino/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../arduino/classes/">Classes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Raspberry Pi</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../raspberry-pi/installation/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../raspberry-pi/circuit/">Circuit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../raspberry-pi/classes/">Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Artificial Intelligence</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../artificial-intelligence/model/">Model</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Webiste</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../website/installation/">Installation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">vrijtap</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Manual</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vrijtap-project-manual">Vrijtap Project Manual</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#vrijtap-project-manual">Vrijtap Project Manual</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#1-introduction">1. Introduction</a><ul>
+<li><a href="#purpose-and-goals">Purpose and Goals</a></li>
+<li><a href="#project-overview">Project Overview</a></li>
+</ul>
+</li>
+<li><a href="#2-getting-started">2. Getting Started</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation-instructions">Installation Instructions</a></li>
+<li><a href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li><a href="#3-user-guide">3. User Guide</a><ul>
+<li><a href="#user-roles-and-permissions">User Roles and Permissions</a></li>
+<li><a href="#user-registration-and-login">User Registration and Login</a></li>
+<li><a href="#main-features">Main Features</a></li>
+<li><a href="#how-to-use-specific-feature">How to Use [Specific Feature]</a></li>
+</ul>
+</li>
+<li><a href="#4-developer-guide">4. Developer Guide</a><ul>
+<li><a href="#architecture-overview">Architecture Overview</a></li>
+<li><a href="#technology-stack">Technology Stack</a></li>
+<li><a href="#data-model">Data Model</a></li>
+<li><a href="#apis-and-endpoints">APIs and Endpoints</a></li>
+<li><a href="#coding-guidelines">Coding Guidelines</a></li>
+<li><a href="#version-control">Version Control</a></li>
+<li><a href="#local-development-setup">Local Development Setup</a></li>
+<li><a href="#deployment-instructions">Deployment Instructions</a></li>
+</ul>
+</li>
+<li><a href="#5-testing-and-quality-assurance">5. Testing and Quality Assurance</a><ul>
+<li><a href="#test-cases-and-scenarios">Test Cases and Scenarios</a></li>
+<li><a href="#testing-procedures">Testing Procedures</a></li>
+<li><a href="#known-issues-and-limitations">Known Issues and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#6-monitoring-and-analytics">6. Monitoring and Analytics</a><ul>
+<li><a href="#key-performance-indicators-kpis">Key Performance Indicators (KPIs)</a></li>
+<li><a href="#analytics-tools-used">Analytics Tools Used</a></li>
+<li><a href="#data-privacy-and-security">Data Privacy and Security</a></li>
+</ul>
+</li>
+<li><a href="#7-support-and-feedback">7. Support and Feedback</a><ul>
+<li><a href="#contact-information">Contact Information</a></li>
+<li><a href="#support-channels">Support Channels</a></li>
+<li><a href="#how-to-report-bugs-or-issues">How to Report Bugs or Issues</a></li>
+<li><a href="#feedback-mechanisms">Feedback Mechanisms</a></li>
+</ul>
+</li>
+<li><a href="#8-legal-and-compliance">8. Legal and Compliance</a><ul>
+<li><a href="#privacy-policy">Privacy Policy</a></li>
+<li><a href="#data-handling-policies">Data Handling Policies</a></li>
+<li><a href="#compliance-requirements">Compliance Requirements</a></li>
+</ul>
+</li>
+<li><a href="#9-maintenance-and-roadmap">9. Maintenance and Roadmap</a><ul>
+<li><a href="#maintenance-plan">Maintenance Plan</a></li>
+<li><a href="#future-updates-and-features">Future Updates and Features</a></li>
+<li><a href="#product-roadmap">Product Roadmap</a></li>
+</ul>
+</li>
+<li><a href="#10-glossary">10. Glossary</a></li>
+<li><a href="#11-acknowledgments">11. Acknowledgments</a></li>
+<li><a href="#12-version-history">12. Version History</a></li>
+</ul>
+<h2 id="1-introduction">1. Introduction</h2>
+<h1 id="1-introduction_1">1. Introduction</h1>
+<h2 id="purpose-and-goals">Purpose and Goals</h2>
+<p>The <strong>Vrijtap</strong> project is centered around a novel and practical solution - an automatic beer tap designed to pour beer with the perfect foam layer consistently. This innovative project addresses a common challenge faced by both consumers and businesses: the art of pouring the ideal beer.</p>
+<h3 id="project-significance">Project Significance</h3>
+<p>Pouring a beer can often be a challenging task, requiring skill and precision to achieve the desired taste and presentation. Inefficient pouring can result in wasted beer and food resources, contributing to unnecessary food waste. The <strong>Vrijtap</strong> project seeks to eliminate these issues by providing a reliable and user-friendly solution for consistently pouring beer with the perfect foam layer.</p>
+<h3 id="project-goals">Project Goals</h3>
+<p>Our primary goals for the <strong>Vrijtap</strong> project include:</p>
+<ul>
+<li>
+<p><strong>Precision</strong>: Developing a system that accurately measures and pours the right amount of beer with the ideal foam layer.</p>
+</li>
+<li>
+<p><strong>Ease of Use</strong>: Creating a user-friendly interface to ensure that anyone, regardless of experience, can operate the beer tap with confidence.</p>
+</li>
+<li>
+<p><strong>Resource Efficiency</strong>: Reducing beer and food wastage, ultimately contributing to a more sustainable and environmentally friendly beverage-serving experience.</p>
+</li>
+</ul>
+<p>By achieving these goals, the <strong>Vrijtap</strong> project aims to revolutionize the way beer is served, making it not only more enjoyable but also more responsible and sustainable.</p>
+<h3 id="project-overview">Project Overview</h3>
+<h1 id="2-project-overview">2. Project Overview</h1>
+<h2 id="scope">Scope</h2>
+<p>The <strong>Vrijtap</strong> project's scope encompasses the development of an automatic beer tap system that excels in pouring beer with consistent, perfect foam layers. This includes the design, engineering, and implementation of hardware and software components necessary for its operation.</p>
+<h2 id="target-audience">Target Audience</h2>
+<p>The <strong>Vrijtap</strong> project is primarily designed to cater to:</p>
+<ul>
+<li>
+<p><strong>Bars and Restaurants</strong>: Providing an efficient and consistent beer pouring solution that enhances customer satisfaction and minimizes wastage.</p>
+</li>
+<li>
+<p><strong>Beer Enthusiasts</strong>: Offering a home-use version for beer connoisseurs who seek the perfect pour in the comfort of their own homes.</p>
+</li>
+<li>
+<p><strong>Event Organizers</strong>: Facilitating large-scale events by simplifying beer service and minimizing the expertise required for bartenders.</p>
+</li>
+</ul>
+<h2 id="unique-features-and-innovations">Unique Features and Innovations</h2>
+<p><strong>Vrijtap</strong> sets itself apart from traditional beer pouring methods with several unique features and innovations, including:</p>
+<ul>
+<li>
+<p><strong>Precision Pouring</strong>: Utilizing advanced sensors and algorithms to precisely measure and dispense beer, ensuring every pour has the ideal foam layer.</p>
+</li>
+<li>
+<p><strong>User-Friendly Interface</strong>: Incorporating an intuitive interface that allows users to easily adjust pouring settings and monitor the pouring process.</p>
+</li>
+<li>
+<p><strong>Sustainability Focus</strong>: Promoting environmental responsibility by reducing beer and food wastage, aligning with the growing demand for sustainable practices.</p>
+</li>
+<li>
+<p><strong>Data Analytics</strong>: Collecting data on pouring patterns and user preferences, which can be used to optimize beer quality and user experience.</p>
+</li>
+<li>
+<p><strong>Customization Options</strong>: Allowing users to tailor their beer pouring experience by choosing the level of foam and beer temperature.</p>
+</li>
+</ul>
+<p>These unique features and innovations position <strong>Vrijtap</strong> as a groundbreaking solution in the world of beverage service, offering a perfect pour with every glass and contributing to more responsible and enjoyable beer consumption.</p>
+<h1 id="2-getting-started">2. Getting Started</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before using or developing for <strong>Vrijtap</strong>, please ensure that you meet the following prerequisites:</p>
+<h3 id="hardware-requirements">Hardware Requirements</h3>
+<ul>
+<li>
+<p><strong>Automatic Beer Tap System</strong>: To use the Vrijtap system, you'll need the physical automatic beer tap device, including its components.</p>
+</li>
+<li>
+<p><strong>Computer or Mobile Device</strong>: A computer or mobile device with internet connectivity for configuration and monitoring purposes.</p>
+</li>
+<li>
+<p><strong>Power Supply</strong>: Ensure a stable power supply for the automatic beer tap system.</p>
+</li>
+</ul>
+<h3 id="software-requirements">Software Requirements</h3>
+<ul>
+<li>
+<p><strong>Operating System</strong>: Any modern operating system compatible with the configuration software provided for Vrijtap. Common options include Windows, macOS, and Linux distributions.</p>
+</li>
+<li>
+<p><strong>Internet Browser</strong>: A web browser to access the interface, preferably the latest versions of popular browsers such as Chrome, Firefox, or Safari.</p>
+</li>
+</ul>
+<h3 id="skills-and-knowledge">Skills and Knowledge</h3>
+<ul>
+<li>
+<p><strong>Technical Aptitude</strong>: Basic technical knowledge to set up and configure the automatic beer tap system using the provided software.</p>
+</li>
+<li>
+<p><strong>User Experience (UX)</strong>: Familiarity with the user interface to operate the system.</p>
+</li>
+<li>
+<p><strong>Maintenance Skills</strong>: Basic troubleshooting and maintenance skills to ensure the proper functioning of the Vrijtap system.</p>
+</li>
+</ul>
+<p>Meeting these prerequisites will ensure a smooth experience when using or developing for Vrijtap, whether you are a user or a developer working with the system.</p>
+<h3 id="installation-instructions">Installation Instructions</h3>
+<ul>
+<li>Provide step-by-step installation instructions for Vrijtap.</li>
+<li>Include system requirements and dependencies.</li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>Explain any important configuration settings or options for users or developers.</li>
+</ul>
+<h2 id="3-user-guide">3. User Guide</h2>
+<h3 id="user-roles-and-permissions">User Roles and Permissions</h3>
+<ul>
+<li>Describe the different user roles in Vrijtap and their permissions.</li>
+</ul>
+<h3 id="user-registration-and-login">User Registration and Login</h3>
+<ul>
+<li>Explain how users can register for accounts and log in to Vrijtap.</li>
+</ul>
+<h3 id="main-features">Main Features</h3>
+<ul>
+<li>List and briefly describe the main features of Vrijtap.</li>
+</ul>
+<h3 id="how-to-use-specific-feature">How to Use [Specific Feature]</h3>
+<ul>
+<li>Provide detailed instructions on using specific features, if applicable.</li>
+</ul>
+<h2 id="4-developer-guide">4. Developer Guide</h2>
+<h3 id="architecture-overview">Architecture Overview</h3>
+<ul>
+<li>Outline the high-level architecture of Vrijtap, including key components and interactions.</li>
+</ul>
+<h3 id="technology-stack">Technology Stack</h3>
+<ul>
+<li>List the technologies and tools used in developing Vrijtap.</li>
+</ul>
+<h3 id="data-model">Data Model</h3>
+<ul>
+<li>Describe the data model, including tables, relationships, and constraints.</li>
+</ul>
+<h3 id="apis-and-endpoints">APIs and Endpoints</h3>
+<ul>
+<li>Document the APIs and endpoints, including request/response formats and authentication methods.</li>
+</ul>
+<h3 id="coding-guidelines">Coding Guidelines</h3>
+<ul>
+<li>Provide coding guidelines and best practices for developers working on Vrijtap.</li>
+</ul>
+<h3 id="version-control">Version Control</h3>
+<ul>
+<li>Explain version control management, including branching and release processes.</li>
+</ul>
+<h3 id="local-development-setup">Local Development Setup</h3>
+<ul>
+<li>Give instructions for setting up a local development environment for Vrijtap.</li>
+</ul>
+<h3 id="deployment-instructions">Deployment Instructions</h3>
+<ul>
+<li>Explain how to deploy Vrijtap to a production environment, including configuration settings and best practices.</li>
+</ul>
+<h2 id="5-testing-and-quality-assurance">5. Testing and Quality Assurance</h2>
+<h3 id="test-cases-and-scenarios">Test Cases and Scenarios</h3>
+<ul>
+<li>Provide a list of test cases and scenarios to cover during testing.</li>
+</ul>
+<h3 id="testing-procedures">Testing Procedures</h3>
+<ul>
+<li>Explain testing procedures, including how to run tests and report issues.</li>
+</ul>
+<h3 id="known-issues-and-limitations">Known Issues and Limitations</h3>
+<ul>
+<li>List any known bugs, issues, or limitations in Vrijtap.</li>
+</ul>
+<h2 id="6-monitoring-and-analytics">6. Monitoring and Analytics</h2>
+<h3 id="key-performance-indicators-kpis">Key Performance Indicators (KPIs)</h3>
+<ul>
+<li>Outline the KPIs monitored in the production environment.</li>
+</ul>
+<h3 id="analytics-tools-used">Analytics Tools Used</h3>
+<ul>
+<li>Mention analytics tools or services used for user behavior tracking and insights.</li>
+</ul>
+<h3 id="data-privacy-and-security">Data Privacy and Security</h3>
+<ul>
+<li>Explain measures for data privacy and security.</li>
+</ul>
+<h2 id="7-support-and-feedback">7. Support and Feedback</h2>
+<h3 id="contact-information">Contact Information</h3>
+<ul>
+<li>Provide contact information for reaching the Vrijtap team.</li>
+</ul>
+<h3 id="support-channels">Support Channels</h3>
+<ul>
+<li>List support channels, such as email, chat, or a support portal.</li>
+</ul>
+<h3 id="how-to-report-bugs-or-issues">How to Report Bugs or Issues</h3>
+<ul>
+<li>Explain how users can report bugs or issues encountered while using Vrijtap.</li>
+</ul>
+<h3 id="feedback-mechanisms">Feedback Mechanisms</h3>
+<ul>
+<li>Describe how users can provide feedback or suggestions for improving Vrijtap.</li>
+</ul>
+<h2 id="8-legal-and-compliance">8. Legal and Compliance</h2>
+<h3 id="privacy-policy">Privacy Policy</h3>
+<ul>
+<li>Link to or provide the privacy policy regarding user data handling.</li>
+</ul>
+<h3 id="data-handling-policies">Data Handling Policies</h3>
+<ul>
+<li>Explain how user data is stored, processed, and protected.</li>
+</ul>
+<h3 id="compliance-requirements">Compliance Requirements</h3>
+<ul>
+<li>Mention legal or industry-specific compliance requirements for Vrijtap.</li>
+</ul>
+<h2 id="9-maintenance-and-roadmap">9. Maintenance and Roadmap</h2>
+<h3 id="maintenance-plan">Maintenance Plan</h3>
+<ul>
+<li>Discuss post-launch maintenance and support plans.</li>
+</ul>
+<h3 id="future-updates-and-features">Future Updates and Features</h3>
+<ul>
+<li>Share insights into planned features and updates for Vrijtap.</li>
+</ul>
+<h3 id="product-roadmap">Product Roadmap</h3>
+<ul>
+<li>Provide a long-term vision and goals for Vrijtap.</li>
+</ul>
+<h2 id="10-glossary">10. Glossary</h2>
+<ul>
+<li>Include a glossary of terms and acronyms for user understanding.</li>
+</ul>
+<h2 id="11-acknowledgments">11. Acknowledgments</h2>
+<ul>
+<li>Give credit and acknowledgment to third-party tools, libraries, or resources used in developing Vrijtap.</li>
+</ul>
+<h2 id="12-version-history">12. Version History</h2>
+<ul>
+<li>Version 1.0.0 - the first manual</li>
+</ul>
+<hr />
+<p>This streamlined markdown template provides a clear structure for your Vrijtap project documentation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../prototype/" class="btn btn-neutral float-right" title="Prototype">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../prototype/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
